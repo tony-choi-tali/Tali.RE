@@ -1,0 +1,109 @@
+@import "./colors.module.scss";
+
+.sidebar-container {
+  height: 100%;
+  overflow: hidden;
+  background-color: $sidebar-bg;
+  display: grid;
+  transition: width 200ms;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "logo-box"
+    "link-box"
+    "toggle-btn";
+
+  .logo-box {
+    grid-area: logo-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1.5rem 0;
+    .logo-heading {
+      overflow: hidden;
+      color: white;
+    }
+  }
+
+  .links-box {
+    overflow-y: auto;
+    grid-area: link-box;
+    background-color: $sidebar-links-bg;
+  }
+
+  .drawer-toggle-btn {
+    grid-area: toggle-btn;
+
+    & > button {
+      border-top: 1px #27415d solid;
+      display: flex;
+      justify-content: flex-end;
+      border-radius: 0px;
+      font-size: 17px;
+      padding: 13px 10px 13px 0px;
+      background-color: transparent;
+
+      & > svg {
+        opacity: 0.8;
+        transition: opacity 200ms;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .links-box::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .links-box::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  .links-box::-webkit-scrollbar-thumb {
+    background-color: $primary;
+    &:hover {
+      background-color: #555;
+    }
+  }
+
+  .navLink {
+    color: black;
+    text-decoration: none;
+
+    .list-item.Mui-selected {
+      background-color: transparent;
+
+      & .MuiListItemIcon-root svg {
+        fill: $selected-sidebar-link;
+      }
+
+      .MuiListItemText-root {
+        .MuiTypography-root {
+          color: $selected-sidebar-link;
+        }
+      }
+    }
+
+    .list-item {
+      display: flex;
+      & .MuiListItemIcon-root svg {
+        fill: $sidebar-link;
+      }
+
+      .MuiListItemText-root {
+        .MuiTypography-root {
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          font-size: 14px;
+          color: $sidebar-link;
+        }
+      }
+      .MuiListItemText-secondary {
+        font-style: italic;
+      }
+    }
+  }
+}

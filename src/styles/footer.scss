@@ -1,0 +1,9 @@
+@import "./colors.module.scss";
+
+.footer {
+  background-color: $footer-bg;
+  padding: 1rem 0;
+  color: black;
+  text-align: center;
+  font-weight: 500;
+}

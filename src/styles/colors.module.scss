@@ -1,0 +1,31 @@
+$primary: #ffffff;
+$warning: #fbba32;
+$danger: #e41a4a;
+$secondary: #455a64;
+$headerColor: #d49b20;
+
+// header
+$header-bg: $primary;
+$header-title: white;
+
+// sidebar colors
+$sidebar-bg: #051e34;
+$sidebar-links-bg: $primary;
+$selected-sidebar-bg: #e8efff;
+$sidebar-link: #e3e3e3;
+$selected-sidebar-link: #669df6;
+
+// footer
+$footer-bg: #d9d9d9;
+
+// main
+$main-container-bg: #fefefe;
+
+// table
+$table-head-color: #e1f5fe;
+
+:export {
+  primary: $primary;
+  secondary: $secondary;
+  tableHeadColor: $table-head-color;
+}
